@@ -1,0 +1,67 @@
+/* boton*/
+@mixin buttonPrincipal($color) {
+    background-color: $color;
+    display: block;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    padding-left: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: $blanco;
+    position: relative;
+    overflow: hidden;
+
+
+}
+
+@mixin buttonHover ($color) {
+    &::after{
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position:absolute;
+        background: rgba($color: $color, $alpha: .3);
+        bottom:0;
+        transform: translateY(-100%);
+        transition: transform .2s ease;
+    }
+    &:hover::after{
+        transform: translateY(0)
+
+    }
+}
+
+
+@mixin box-sizing($box-model) {
+    box-sizing: $box-model;
+    
+}
+@mixin backgroun-image($image) {
+    background-image:url($image) ;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+}
+/*gradientes*/
+@mixin gradiente($color1,$color2 ) {
+    background:linear-gradient(to right, $color1 0%, $color2 100%);
+    
+}
+/*media queries*/
+@mixin celphone {
+    @media only screen and(min-width:#{$celphone}) {
+        @content;
+    }
+}
+@mixin tablets {
+    @media only screen and(min-width:#{$tablets}) {
+        @content;
+    }
+}
+@mixin desktops {
+    @media only screen and(min-width:#{$desktops}) {
+        @content;
+    }
+}

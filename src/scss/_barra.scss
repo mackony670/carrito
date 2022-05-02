@@ -1,0 +1,37 @@
+.barra {
+  color: $blanco;
+  min-height: 5rem;
+  @include gradiente($secundari, $terciario);
+}
+.barra--content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include desktops() {
+    flex-direction: row;
+  }
+  &__icono {
+    flex: 1;
+    background-size: 2.4rem;
+    text-align: center;
+    padding: 10px;
+    width: 300px;
+    @include celphone() {
+      width: 400px;
+    }
+    &.icon1 {
+      @include backgroun-image("../img/icono1.png");
+    }
+    &.icon2 {
+      @include backgroun-image("../img/icono2.png");
+    }
+    &.icon3 {
+      @include backgroun-image("../img/icono3.png");
+    }
+    &.icon1,
+    &.icon2,
+    &.icon3 {
+      background-position: left center;
+    }
+  }
+}

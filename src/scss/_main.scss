@@ -1,0 +1,58 @@
+.section--main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include celphone(){
+        justify-content: space-between;
+
+        flex: 0 1 calc(50% - 1rem)
+    }
+
+}
+.card--curso{
+    flex: 0 1 100%;
+    border: 1px solid darken($color: $gris, $amount: 5)  ;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    @include celphone(){
+
+        flex: 0 1 calc(50% - 1rem)
+    }
+    @include tablets(){
+        flex: 0 1 calc(33% - 1rem)
+    }
+    @include desktops(){
+        flex: 0 1 calc(25% - 1rem)
+    }
+    &__imagen{
+        width: 100%;
+    }
+    &__info{
+        padding:10px;
+        h4{
+            margin: 0;
+        }
+        .precio{
+            display: flex;
+            justify-content: space-between;
+            .regular{
+               text-decoration: line-through; 
+               color: red;
+            }
+            .oferta{
+                font-size: 1.3rem;
+                font-weight: 700;
+            }
+        }
+        
+    }
+    .boton{
+        display: block;
+        @include buttonPrincipal($terciario);
+        @include buttonHover($terciario-dark );
+        font-size: 1rem;
+    }
+}    
